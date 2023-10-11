@@ -1,0 +1,337 @@
+<!-- <html>
+
+<body>
+    
+<img src="{{url_for('static', filename='after.jpg')}}" alt="image" height=52% width = 50%>
+
+{{data}}
+
+</body>
+
+</html>
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Facial Emotion Detection</title>
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css">
+    <style>
+        form {
+  width: 100%;
+  max-width: 500px;
+  margin: 50px auto;
+  background:#fafafa;
+  -webkit-box-shadow: 0px 0px 96px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 96px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 96px 0px rgba(0,0,0,0.75);
+  min-height: 250px;
+  padding: 40px;
+}
+h1 {text-align: center;}
+.i1 {
+  max-height: 100%;
+  max-width: 100%;
+  height: 300px;
+  width: 400px;
+  display: block;
+  /* position: absolute; */
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-sizing: border-box;
+  margin: auto;
+}
+.cards-list {
+  z-index: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.card {
+  margin: 30px auto;
+  width: 300px;
+  height: 300px;
+  border-radius: 40px;
+box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.card .card_image {
+  width: inherit;
+  height: inherit;
+  border-radius: 40px;
+}
+
+.card .card_image img {
+  width: inherit;
+  height: inherit;
+  border-radius: 40px;
+  object-fit: cover;
+}
+
+.card .card_title {
+  text-align: center;
+  border-radius: 0px 0px 40px 40px;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+  margin-top: -80px;
+  height: 40px;
+}
+
+.card:hover {
+  transform: scale(0.9, 0.9);
+  box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25), 
+    -5px -5px 30px 15px rgba(0,0,0,0.22);
+}
+
+.title-white {
+  color: white;
+}
+
+.title-black {
+  color: black;
+}
+
+@media all and (max-width: 500px) {
+  .card-list {
+    /* On small screens, we are no longer using row direction but column */
+    flex-direction: column;
+  }
+}
+
+    </style>
+
+
+  </head>
+  <body class="bg-gray-200">
+    <div class="container mx-auto">
+      <header class="py-4 bg-gray-800 text-white flex justify-center">
+        <h1 class="text-2xl font-bold">Facial Emotion Recognition</h1>
+      </header>
+
+      <nav class="flex justify-center bg-gray-700 py-2 text-white">
+        <a href='http://127.0.0.1:2000' onclick="shownecessary('home')" class="px-4 py-2 mx-2 hover:bg-gray-600 rounded">Home</a>
+        <a onclick="shownecessary('GetUrEmotion')" class="px-4 py-2 mx-2 hover:bg-gray-600 rounded">Emotion Prediction</a>
+        <a  href="http://127.0.0.1:2000/liveStreaming" class="px-4 py-2 mx-2 hover:bg-gray-600 rounded">Live Streaming</a>
+        <a  onclick="shownecessary('AboutUs')" class="px-4 py-2 mx-2 hover:bg-gray-600 rounded">About Us</a>
+        
+      </nav>
+
+      
+
+    </div>  
+<div id="home">
+
+    <main class="py-4 flex flex-col items-center justify-center">
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">Welcome to Our Website!</h2>
+
+        <div class="flex flex-col md:flex-row items-center justify-center">
+          <div class="w-full md:w-1/3 px-4 mb-4 md:mb-0">
+            <img src="https://recfaces.com/wp-content/uploads/2021/03/rf-emotion-recognition-rf-830x495-1.jpeg" alt="" class="rounded shadow w-full h-64 object-cover">
+          </div>
+
+          <div class="w-full md:w1/3 px4">
+            <p class="text gray700 leading7 mb4">Gestures and facial expressions do indeed communicate, as anyone can prove by turning off the sound on a television set and asking watchers to characterize the speakers from the picture alone.</p>
+          </div>
+        </div>
+
+        
+         
+         
+
+      </main>
+</div>
+    
+<div id="GetUrEmotion">
+ <h1 class="text-2xl font-bold">{{data}}</h1> 
+  <br>
+  <br>
+    <img  class='i1' src="{{url_for('static', filename='after.jpg')}}" alt="image" height=52% width = 50%>
+
+    
+</div>
+
+<div id="AboutUs">
+  <div class="container">
+    <ul class="cards" class="center">
+      
+      <li class="card">
+        <div>
+       
+          <h3 class="card-title">S.Renu Deepthi</h3>
+          <div class="card-content">
+            <p>Assistant Professor</p>     
+            <p>Dept of Information Technology</p> 
+            <p>VNR VJIET</p>      
+          </div>
+        </div>
+        <div class="buttons">
+      <button class="primary">
+       Our Beloved Guide
+      </button>
+     
+    </div>
+  </li>
+      
+      
+  <li class="card">
+    <div>
+      <h3 class="card-title">Ch.Anusha</h3>
+      <div class="card-content">
+        <p>Information Technology-B</p>
+        <p>19071A1272</p>          
+      </div>
+    </div>
+    <div class="buttons">
+  <button class="primary">
+   Team Member
+  </button>
+ 
+</div>
+  </li>
+  
+  
+   <li class="card">
+    <div>
+      <h3 class="card-title">C.Teja</h3>
+      <div class="card-content">
+        <p>Information Technology-B</p>
+        <p>19071A1273</p>
+       
+      </div>
+    </div>
+    <div class="buttons">
+  <button class="primary">
+    Team Member
+  </button>
+  
+</div>
+  </li>
+      
+    </ul>
+   
+
+
+
+
+    <ul class="cards">
+     
+       <li class="card">
+        <div>
+         
+          <h3 class="card-title">D.Kavya</h3>
+          <div class="card-content">
+            <p>Information Technology-B</p>
+            <p>19071A1274</p>
+          </div>
+        </div>
+        <div class="buttons">
+      <button class="primary">
+        Team Member
+      </button>
+    
+    </div>
+      </li>
+       <li class="card">
+        <div>
+       
+          <h3 class="card-title">A.Priyanka</h3>
+          <div class="card-content">
+            <p>Information Technology-B</p>
+            <p>20075A1208</p>
+          </div>
+        </div>
+        <div class="buttons">
+      <button class="primary">
+        Team Member
+      </button>
+    </div>
+      </li>
+    </ul>
+  </div>
+    
+    </div>
+
+
+    
+
+    <script>
+      
+         document.getElementById("home").style.display = "none";
+        // document.getElementById("GetUrEmotion").style.display = "none";
+         document.getElementById("AboutUs").style.display = "none";
+       
+       function shownecessary(x){
+        if(x==='home'){
+            document.getElementById("home").style.display = "block";
+            document.getElementById("GetUrEmotion").style.display = "none";
+         document.getElementById("AboutUs").style.display = "none";
+       
+        }
+        else if(x==='GetUrEmotion'){
+            document.getElementById("home").style.display = "none";
+            document.getElementById("GetUrEmotion").style.display = "block";
+         document.getElementById("AboutUs").style.display = "none";
+
+        }
+        else if(x==='AboutUs'){
+            document.getElementById("home").style.display = "none";
+            document.getElementById("GetUrEmotion").style.display = "none";
+         document.getElementById("AboutUs").style.display = "block";
+
+        }
+
+
+       }
+
+       
+  
+        </script>
+
+
+
+  </body>  
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
